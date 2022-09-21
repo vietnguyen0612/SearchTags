@@ -43,10 +43,13 @@ function init () {
     
     input.addEventListener('keypress',function(e){
         if(e.key == 'Enter') {
-            a.push(input.value)
-            input.value = ''
-            input.focus()
-            render(a)
+            if(input.value !== '') {
+
+                a.push(input.value.trim())
+                input.value = ''
+                input.focus()
+                render(a)
+            }
         }
     })
 
